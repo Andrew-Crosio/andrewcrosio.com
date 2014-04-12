@@ -1,21 +1,5 @@
 {% extends "base.html" %}
 
-{% load humanize %}
-
 {% block content %}
-    <div class="article">
-        <h2>
-            {{ object.title }}
-        </h2>
-        <span class="article-caption">
-            <span class="label label-info">{{ object.author.first_name }} {{ object.author.last_name }}</span>
-            <span class="article-time">{{ object.created_at|naturaltime }}</span>
-        </span>
-
-        <hr/>
-
-        <div class="article-content">
-            {{ object.content|safe }}
-        </div>
-    </div>
+    {% include "blog/_article.html" with article=object %}
 {% endblock %}
