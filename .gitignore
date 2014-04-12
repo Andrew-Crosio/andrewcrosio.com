@@ -35,7 +35,10 @@ nosetests.xml
 .project
 .pydevproject
 
-# Project
+## Project
 
 # IDE
 .idea
+
+# Settings
+blog/blog/local_settings.py
