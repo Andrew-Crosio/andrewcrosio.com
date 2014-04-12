@@ -1,0 +1,26 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "test@test.com",
+            "first_name": "Testy",
+            "last_name": "McTesterton",
+            "email": "test@test.com",
+            "is_staff": true,
+            "is_active": true
+        }
+    },
+    {
+        "model": "blog.article",
+        "pk": 1,
+        "fields": {
+            "title": "This is a test article",
+            "slug": "this-is-a-test-article",
+            "author": 1,
+            "content": "<p>orem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat tortor nec sem accumsan, id tempor risus vulputate. Cras laoreet orci quis mi luctus, et molestie mi cursus. Aenean sit amet tellus pulvinar felis dictum tristique ut non ipsum. Morbi fermentum libero eget sollicitudin dictum. In posuere lectus eget rhoncus euismod. Nunc varius sit amet sapien non molestie. Suspendisse a turpis orci. Suspendisse odio est, semper vel ligula vitae, dignissim lacinia diam. Pellentesque hendrerit sit amet massa ac viverra. Phasellus ante metus, tristique vitae mollis ut, sollicitudin ac dolor. Nunc mattis vitae massa ut porta. Cras lacinia, quam nec tempus varius, urna lacus vulputate quam, a dapibus nisl dolor a nisi. Nulla feugiat, arcu nec varius elementum, justo mauris malesuada odio, sit amet ultricies tortor mi ac leo. Maecenas euismod vestibulum eros imperdiet aliquet. Suspendisse potenti. Nulla vehicula volutpat tincidunt.</p>",
+            "created_at": "2014-05-04T00:00:00+04:00",
+            "updated_at": "2014-05-04T00:00:00+04:00"
+        }
+    }
+]

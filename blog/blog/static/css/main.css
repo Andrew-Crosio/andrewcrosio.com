@@ -1,0 +1,26 @@
+.article {
+    border: 1px solid #b6b6b6;
+    padding: 2% 3.5% 3% 5%;
+}
+
+.no-header {
+    margin-top: 80px;
+}
+
+@media (max-width: 450px) {
+    .article-time {
+        display: block;
+    }
+}
+
+@media (min-width: 450px) {
+    .article-time:before {
+        content: ' - '
+    }
+}
+
+
+
+
+
+

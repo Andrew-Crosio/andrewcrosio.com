@@ -1,0 +1,19 @@
+{% load humanize %}
+
+<div class="article">
+    <h2>
+        <a href="{% url "article-detail" slug=article.slug %}">
+            {{ article.title }}
+        </a>
+    </h2>
+    <span class="article-caption">
+        <span class="label label-info">{{ article.author.first_name }} {{ article.author.last_name }}</span>
+        <span class="article-time">{{ article.created_at|naturaltime }}</span>
+    </span>
+
+    <hr/>
+
+    <div class="article-content">
+        {{ article.content|safe }}
+    </div>
+</div>
