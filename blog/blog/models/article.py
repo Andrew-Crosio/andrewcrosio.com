@@ -13,3 +13,4 @@ class Article(CreatedAtAndUpdatedAtModel):
 
     class Meta:
         app_label = 'blog'
+        ordering = ['-id']
