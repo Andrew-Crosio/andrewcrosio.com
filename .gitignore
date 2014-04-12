@@ -42,3 +42,4 @@ nosetests.xml
 
 # Settings
 blog/blog/local_settings.py
+blog/db.sqlite3
