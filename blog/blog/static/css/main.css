@@ -20,7 +20,15 @@
 }
 
 
+.back-link {
+    display: block;
+    margin: 20px;
+    font-size: 1.2em;
+    border-radius: 0.25em;
+}
 
-
-
-
+.back-button {
+    font-size: 0.7em;
+    position: relative;
+    top: 0;
+}
