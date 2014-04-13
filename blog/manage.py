@@ -5,7 +5,7 @@ import sys
 if __name__ == "__main__":
     from gevent import monkey
 
-    monkey.patch_all()
+    monkey.patch_all(thread=False)
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.conf.settings")
 
