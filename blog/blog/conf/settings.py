@@ -40,9 +40,6 @@ INSTALLED_APPS = (
     'blog',
 )
 
-if DEBUG:
-    INSTALLED_APPS = INSTALLED_APPS + ('django_extensions',)
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -94,3 +91,6 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+if DEBUG:
+    INSTALLED_APPS = INSTALLED_APPS + ('django_extensions',)
