@@ -20,7 +20,7 @@ def main():
     from gevent import monkey
     from gevent.wsgi import WSGIServer
 
-    monkey.patch_all()
+    monkey.patch_all(thread=False)
 
     server = WSGIServer(('0.0.0.0', 8080), application)
 
