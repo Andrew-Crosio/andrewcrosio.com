@@ -20,11 +20,14 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
 SECRET_KEY = 'replace_me_in_production'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'andrewcrosio.com',
+    'www.andrewcrosio.com'
+]
 
 
 # Application definition
