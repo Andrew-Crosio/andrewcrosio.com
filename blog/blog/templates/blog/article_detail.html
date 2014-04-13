@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <a href="{% url "article-list" %}" class="back-link">
+        <i class="glyphicon glyphicon-arrow-left back-button"></i> Back to Articles
+    </a>
+
     {% include "blog/_article.html" with article=object %}
 {% endblock %}
