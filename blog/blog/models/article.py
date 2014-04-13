@@ -17,3 +17,14 @@ class Article(CreatedAtAndUpdatedAtModel):
     class Meta:
         app_label = 'blog'
         ordering = ['-id']
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        # TODO: fix this hack
+        self.author = User.objects.latest('id')
+
+        return super(Article, self).save(
+            force_insert=force_insert,
+            force_update=force_update,
+            using=using,
+            update_fields=update_fields
+        )
