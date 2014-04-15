@@ -40,8 +40,10 @@
     }
 }
 
-.article-time {
-    display: block;
+@media (max-width: 480px) {
+    .article-time {
+        display: block;
+    }
 }
 
 @media (min-width: 480px) {
