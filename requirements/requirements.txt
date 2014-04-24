@@ -1,2 +1,2 @@
-git+https://github.com/django/django.git@stable/1.7.x#egg=Django
+git+https://github.com/django/django.git@32c857908998503cd595311eebc9256d44f65803#egg=Django
 gevent==1.0
