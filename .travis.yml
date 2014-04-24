@@ -1,7 +1,7 @@
-python: "2.8"
+python: "2.7"
 install:
-  - "pip install -r requirements/requirements.txt"
-  - "pip install -r requirements/devrequirements.txt"
+  - pip install -r requirements/requirements.txt
+  - pip install -r requirements/devrequirements.txt
 env:
   - "DJANGO_SETTINGS_MODULE=blog.conf.settings"
 script: "nosetests"
