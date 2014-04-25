@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'axes',
-    'django_nose',
     'blog',
 )
 
@@ -92,9 +91,6 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# Django Nose Test Runner
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-
 # Attempt to import local settings, if any
 try:
     from .local_settings import *
@@ -102,4 +98,9 @@ except ImportError:
     pass
 
 if DEBUG:
-    INSTALLED_APPS = INSTALLED_APPS + ('django_extensions',)
+    try:
+        # Ensure we have it, otherwise do nothing
+        import django_extensions
+        INSTALLED_APPS = INSTALLED_APPS + ('django_extensions',)
+    except ImportError:
+        pass
