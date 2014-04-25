@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'axes',
+    'django_nose',
     'blog',
 )
 
@@ -90,6 +91,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Django Nose Test Runner
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # Attempt to import local settings, if any
 try:
