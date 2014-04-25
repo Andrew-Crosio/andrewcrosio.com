@@ -1,11 +1,11 @@
 test:
-	cd blog && python manage.py test --settings=blog.conf.test_settings
+	cd blog && rm -f .coverage && coverage run --source='.' manage.py test --settings=blog.conf.test_settings && coverage report
 
 test_forever:
-	cd blog && nosier -b .coverage -b cover 'python manage.py test --settings=blog.conf.test_settings'
+	nosier -p blog/blog/ 'make test'
 
 travisci: test
 	mv blog/.coverage .
 
 make htmlcov:
-	cd blog && python manage.py test --settings=blog.conf.test_settings --cover-html
+	cd blog && rm -f .coverage && coverage run --source='.' manage.py test --settings=blog.conf.test_settings && coverage report && coverage html
