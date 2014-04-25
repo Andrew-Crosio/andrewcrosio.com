@@ -5,6 +5,7 @@
 .article {
     border: 1px solid #b6b6b6;
     padding: 10px 3.5% 25px 5%;
+    margin: 20px 0;
 }
 
 @media (max-width: 1000px) {
