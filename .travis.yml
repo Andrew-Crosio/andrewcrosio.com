@@ -5,6 +5,6 @@ install:
   - pip install -r requirements/devrequirements.txt --upgrade --allow-external inotifyx --allow-unverified inotifyx
 env:
   - DJANGO_SETTINGS_MODULE=blog.conf.settings
-script: make test
+script: make travisci
 after_success:
     coveralls

@@ -5,8 +5,9 @@ omit =
     *migrations*
     */admin.py
     */wsgi.py
-    */settings.py
-    */*_settings.py
+    */*settings.py
+    tests/*
+    manage.py
 
 [report]
 exclude_lines =

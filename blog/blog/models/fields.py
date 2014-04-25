@@ -10,7 +10,7 @@ class AutoSlugField(models.SlugField):
 
     @staticmethod
     def get_value(fields):
-        return '-'.join(slugify(field) for field in fields)
+        return '-'.join(slugify(unicode(field)) for field in fields)
 
     def pre_save(self, model_instance, add):
         field_values = [getattr(model_instance, field) for field in self._fields]
