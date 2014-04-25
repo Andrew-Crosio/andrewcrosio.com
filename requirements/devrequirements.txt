@@ -10,3 +10,4 @@ nose-exclude==0.2.0
 coveralls==0.4.1
 django-nose==1.2
 nosier==1.1
+factory-boy==2.3.1
