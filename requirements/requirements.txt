@@ -1,3 +1,4 @@
 git+https://github.com/django/django.git@32c857908998503cd595311eebc9256d44f65803#egg=Django
 gevent==1.0
 git+https://github.com/Andrew-Crosio/django-axes.git@django1.7_compatibility#egg=django-axes
+pytz==2014.2
