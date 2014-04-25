@@ -4,5 +4,3 @@ from blog.models import Article
 
 
 admin.site.register(Article)
-
-
