@@ -2,7 +2,7 @@ language: python
 python: 2.7
 install:
   - pip install -r requirements/requirements.txt --upgrade --use-mirrors
-  - pip install -r requirements/devrequirements.txt --upgrade --use-mirrors --allow-external inotifyx
+  - pip install -r requirements/devrequirements.txt --upgrade --use-mirrors --allow-external inotifyx --allow-unverified inotifyx
 env:
   - DJANGO_SETTINGS_MODULE=blog.conf.settings
 script: make test
