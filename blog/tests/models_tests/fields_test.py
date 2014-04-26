@@ -4,6 +4,7 @@ from should_dsl import should
 
 from tests.models import MultiFieldSlug
 from tests.models import CachedCounterModel
+from tests.models import CachedCounterRelation
 
 
 class AutoSlugFieldComponentTestCase(TestCase):
@@ -20,34 +21,21 @@ class AutoSlugFieldComponentTestCase(TestCase):
 
 
 class CouterFieldComponentTestCase(TestCase):
-    def test_should_read_from_getter_function(self):
-        model = CachedCounterModel()
-        model.fakerelation = relationship_mock = flexmock()
+    def test_should_read_from_relation_count_and_update_on_save(self):
+        model = CachedCounterModel.objects.create()
+        model.counter | should | equal_to(0)
 
-        (
-            relationship_mock.should_receive('count')
-            .with_args()
-            .and_return(10)
-            .once()
-        )
+        for count in xrange(1, 10):
+            CachedCounterRelation.objects.create(other=model)
+            model.counter | should | equal_to(count)
 
-        model.save()
-        model.counter | should | equal_to(10)
+    def test_should_read_from_relation_count_and_update_on_delete(self):
+        model = CachedCounterModel.objects.create()
+        model.counter | should | equal_to(0)
 
-    def test_should_update_on_every_save(self):
-        model = CachedCounterModel()
-        model.fakerelation = relationship_mock = flexmock()
+        for count in xrange(1, 10):
+            CachedCounterRelation.objects.create(other=model)
 
-        (
-            relationship_mock.should_receive('count')
-            .with_args()
-            .and_return(10)
-            .and_return(20)
-            .twice()
-        )
-
-        model.save()
-        model.counter | should | equal_to(10)
-
-        model.save()
-        model.counter | should | equal_to(20)
+        for count in xrange(8, -1, -1):
+            model.relation.latest('id').delete()
+            model.counter | should | equal_to(count)

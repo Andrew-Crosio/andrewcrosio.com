@@ -2,6 +2,7 @@ from django.db import models
 
 from blog.models.base import CreatedAtAndUpdatedAtModel
 from blog.models.fields import AutoSlugField
+from blog.models.fields import Counter
 
 
 class MultiFieldSlug(models.Model):
@@ -13,3 +14,11 @@ class MultiFieldSlug(models.Model):
 
 class DatedModel(CreatedAtAndUpdatedAtModel):
     pass
+
+
+class CachedCounterModel(models.Model):
+    counter = Counter('relation')
+
+
+class CachedCounterRelation(models.Model):
+    other = models.ForeignKey(CachedCounterModel, related_name='relation')

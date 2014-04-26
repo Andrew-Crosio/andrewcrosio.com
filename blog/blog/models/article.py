@@ -3,6 +3,7 @@ from django.db import models
 
 from blog.models.base import CreatedAtAndUpdatedAtModel
 from blog.models.fields import AutoSlugField
+from blog.models.fields import Counter
 
 
 class Article(CreatedAtAndUpdatedAtModel):
@@ -10,6 +11,7 @@ class Article(CreatedAtAndUpdatedAtModel):
     slug = AutoSlugField(fields=['title'], editable=False)
     author = models.ForeignKey(User, related_name='articles', editable=False)
     content = models.TextField()
+    like_count = Counter('likes')
 
     def __unicode__(self):
         return self.title
