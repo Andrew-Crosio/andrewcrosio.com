@@ -3,3 +3,4 @@ By importing in this way, we create a virtual module that allows us to separate 
 different files without distributing Django
 """
 from blog.models.article import Article
+from blog.models.like import Like

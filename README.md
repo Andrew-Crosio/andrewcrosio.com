@@ -20,7 +20,7 @@ Blog site for Andrew Crosio.
 ```
 make test
 ```
-Or if you'd like to continuous run them
+Or if you'd like to continuously run them
 ```
 make test_forever
 ```

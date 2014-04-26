@@ -1,6 +1,7 @@
 {% load humanize %}
+{% load like %}
 
-<div class="article">
+<div class="article container">
     <h2>
         <a href="{% url "article-detail" slug=article.slug %}">
             {{ article.title }}
@@ -15,5 +16,22 @@
 
     <div class="article-content">
         {{ article.content|safe }}
+    </div>
+
+    <div class="article-controls row">
+        <div class="like-counter-container col-xs-3 col-xs-offset-1 col-md-1 col-md-offset-10">
+            <strong>{{ article.like_count }}</strong> Likes
+        </div>
+        <div class="like-container span1 col-xs-3 col-xs-offset-4 col-md-1 col-md-offset-0">
+            {% if not article|has_liked:request %}
+                <a href="{% url "like-article" article.slug %}">
+                    <i class="glyphicon glyphicon-thumbs-up like-button"></i>
+                    Like
+                </a>
+            {% else %}
+                <i class="glyphicon glyphicon-thumbs-up like-button"></i>
+                Liked
+            {% endif %}
+        </div>
     </div>
 </div>
