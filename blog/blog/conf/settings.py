@@ -45,7 +45,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'blog.middleware.session.UbiquitousSessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -82,6 +82,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Sessions
+SESSION_COOKIE_AGE = 3600 * 24 * 365  # One year cookie
 
 
 # Static files (CSS, JavaScript, Images)

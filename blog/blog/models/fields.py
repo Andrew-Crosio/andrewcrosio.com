@@ -25,6 +25,7 @@ class Counter(models.IntegerField):
     def __init__(self, relation=None, *args, **kwargs):
         self._relation = relation
 
+        # Connect receivers to the hook, that will update when relation changes
         post_save.connect(self._update_hook)
         post_delete.connect(self._update_hook)
 
