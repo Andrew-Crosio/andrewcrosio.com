@@ -26,7 +26,11 @@ class LikeView(View):
                 import ipdb;ipdb.set_trace()
                 raise NotImplementedError()
             else:
-                url = reverse('article-detail', args=[article.slug])
+                try:
+                    url = request.META['HTTP_REFERER']
+                except KeyError:
+                    url = reverse('article-detail', args=[article.slug])
+
                 response = HttpResponseRedirect(url)
 
         return response
