@@ -17,3 +17,16 @@ class AutoSlugField(models.SlugField):
         new_value = self.get_value(field_values)
         setattr(model_instance, self.name, new_value)
         return new_value
+
+
+class Counter(models.IntegerField):
+    def __init__(self, getter=None, *args, **kwargs):
+        self._getter = getter
+        kwargs.setdefault('editable', False)
+        kwargs.setdefault('default', 0)
+        super(Counter, self).__init__(*args, **kwargs)
+
+    def pre_save(self, model_instance, add):
+        value = self._getter(model_instance)
+        setattr(model_instance, self.name, value)
+        return value
